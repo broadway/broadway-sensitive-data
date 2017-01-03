@@ -1,0 +1,33 @@
+{
+  "name": "broadway/sensitive-data",
+  "description": "helpers for handling sensitive data with Broadway",
+  "type": "library",
+  "license": "MIT",
+  "require": {
+    "broadway/broadway": "^0.10"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^5.2"
+  },
+  "authors": [
+    {
+      "name": "othillo",
+      "email": "othillo@othillo.nl"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Broadway\\BroadwaySensitiveData\\EventHandling\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Broadway\\BroadwaySensitiveData\\EventHandling\\": "test/"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "0.2.x-dev"
+    }
+  }
+}
