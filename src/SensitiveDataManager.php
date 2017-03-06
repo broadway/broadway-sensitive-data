@@ -12,9 +12,9 @@
 namespace Broadway\BroadwaySensitiveData\EventHandling;
 
 use Broadway\Domain\DomainMessage;
-use Broadway\EventHandling\EventListenerInterface;
+use Broadway\EventHandling\EventListener;
 
-class SensitiveDataManager implements EventListenerInterface
+class SensitiveDataManager implements EventListener
 {
     private $sensitiveData;
     private $sensitiveDataProcessors = [];
