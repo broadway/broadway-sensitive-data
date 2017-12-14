@@ -21,7 +21,7 @@ class Invitation extends Broadway\EventSourcing\EventSourcedAggregateRoot
     /**
      * Factory method to create an invitation.
      */
-    public static function invite($invitationId, $name)
+    public static function invite(string $invitationId, string $name)
     {
         $invitation = new Invitation();
 
@@ -36,7 +36,7 @@ class Invitation extends Broadway\EventSourcing\EventSourcedAggregateRoot
      *
      * {@inheritDoc}
      */
-    public function getAggregateRootId()
+    public function getAggregateRootId(): string
     {
         return $this->invitationId;
     }
