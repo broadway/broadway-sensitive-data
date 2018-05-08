@@ -8,7 +8,7 @@ Helpers for handling sensitive data with Broadway.
 ## Installation
 
 ```
-$ composer require broadway/broadway-sensitive-data
+$ composer require broadway/sensitive-data
 ```
 
 ## About
