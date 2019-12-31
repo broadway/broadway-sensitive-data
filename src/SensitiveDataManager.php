@@ -34,7 +34,7 @@ class SensitiveDataManager implements EventListener
         $this->sensitiveDataProcessors[] = $sensitiveDataProcessor;
     }
 
-    public function handle(DomainMessage $domainMessage)
+    public function handle(DomainMessage $domainMessage): void
     {
         foreach ($this->sensitiveDataProcessors as $processor) {
             $processor->handle($domainMessage, $this->sensitiveData);
