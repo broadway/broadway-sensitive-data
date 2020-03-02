@@ -4,7 +4,8 @@
   "type": "library",
   "license": "MIT",
   "require": {
-    "broadway/broadway": "^2.0"
+    "broadway/broadway": "^2.0",
+    "php": ">=7.2"
   },
   "require-dev": {
     "phpunit/phpunit": "^5.2"
