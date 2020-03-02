@@ -13,9 +13,9 @@ namespace Broadway\BroadwaySensitiveData\EventHandling;
 
 use Broadway\Domain\DomainMessage;
 use Broadway\Domain\Metadata;
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 
-class SensitiveDataManagerTest extends PHPUnit_Framework_TestCase
+class SensitiveDataManagerTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test

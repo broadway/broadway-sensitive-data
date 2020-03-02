@@ -11,7 +11,7 @@
 
 namespace Broadway\BroadwaySensitiveData\EventHandling;
 
-class SensitiveDataTest extends \PHPUnit_Framework_TestCase
+class SensitiveDataTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test
