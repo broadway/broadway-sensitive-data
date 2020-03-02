@@ -17,6 +17,7 @@ use Broadway\EventStore\InMemoryEventStore;
 use Broadway\BroadwaySensitiveData\EventHandling\SensitiveData;
 use Broadway\BroadwaySensitiveData\EventHandling\SensitiveDataManager;
 use Broadway\BroadwaySensitiveData\EventHandling\SensitiveDataProcessor;
+use PHPUnit\Framework\TestCase;
 
 require_once __DIR__ . '/HandlingSensitiveData.php';
 
@@ -25,13 +26,13 @@ require_once __DIR__ . '/HandlingSensitiveData.php';
  * - sensitive data is not stored in the event stream
  * - sensitive data is available for one-off processing
  */
-class HandlingSensitiveDataTest extends PHPUnit_Framework_TestCase
+class HandlingSensitiveDataTest extends TestCase
 {
     private $commandBus;
     private $eventBus;
     private $sensitiveDataProcessor;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->commandBus = new SimpleCommandBus();
         $this->eventBus   = new TraceableEventBus(new SimpleEventBus());
