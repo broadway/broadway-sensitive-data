@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the broadway/sensitive-data package.
  *
@@ -18,7 +20,7 @@ class SensitiveDataTest extends \PHPUnit\Framework\TestCase
      */
     public function it_exposes_its_properties()
     {
-        $data          = ['foo' => 'bar'];
+        $data = ['foo' => 'bar'];
         $sensitiveData = new SensitiveData($data);
 
         $this->assertEquals($data, $sensitiveData->getData());

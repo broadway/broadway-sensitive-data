@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the broadway/sensitive-data package.
  *
@@ -9,7 +11,7 @@
  * file that was distributed with this source code.
  */
 
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__.'/../vendor/autoload.php';
 
 /**
  * Invitation aggregate root.
@@ -34,7 +36,7 @@ class Invitation extends Broadway\EventSourcing\EventSourcedAggregateRoot
     /**
      * Every aggregate root will expose its id.
      *
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getAggregateRootId(): string
     {
@@ -42,7 +44,7 @@ class Invitation extends Broadway\EventSourcing\EventSourcedAggregateRoot
     }
 
     /**
-     * The "apply" method of the "InvitedEvent"
+     * The "apply" method of the "InvitedEvent".
      */
     protected function applyInvitedEvent(InvitedEvent $event)
     {
@@ -84,8 +86,8 @@ class InviteCommand
     public function __construct($invitationId, $name, $password)
     {
         $this->invitationId = $invitationId;
-        $this->name         = $name;
-        $this->password     = $password;
+        $this->name = $name;
+        $this->password = $password;
     }
 }
 
@@ -97,7 +99,7 @@ class InvitedEvent
     public function __construct($invitationId, $name)
     {
         $this->invitationId = $invitationId;
-        $this->name         = $name;
+        $this->name = $name;
     }
 }
 
@@ -118,7 +120,7 @@ class InvitationCommandHandler extends Broadway\CommandHandling\SimpleCommandHan
         Broadway\EventSourcing\EventSourcingRepository $repository,
         \Broadway\BroadwaySensitiveData\EventHandling\SensitiveDataManager $sensitiveDataManager
     ) {
-        $this->repository           = $repository;
+        $this->repository = $repository;
         $this->sensitiveDataManager = $sensitiveDataManager;
     }
 

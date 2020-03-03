@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the broadway/sensitive-data package.
  *
@@ -17,10 +19,10 @@ abstract class SensitiveDataProcessor implements SensitiveDataEventListenerInter
 {
     public function handle(DomainMessage $domainMessage, SensitiveData $data = null)
     {
-        $event  = $domainMessage->getPayload();
+        $event = $domainMessage->getPayload();
         $method = $this->getApplyMethod($event);
 
-        if (! method_exists($this, $method)) {
+        if (!method_exists($this, $method)) {
             return;
         }
 
@@ -31,6 +33,6 @@ abstract class SensitiveDataProcessor implements SensitiveDataEventListenerInter
     {
         $classParts = explode('\\', get_class($event));
 
-        return 'apply' . end($classParts);
+        return 'apply'.end($classParts);
     }
 }

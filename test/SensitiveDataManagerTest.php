@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the broadway/sensitive-data package.
  *
@@ -13,7 +15,6 @@ namespace Broadway\BroadwaySensitiveData\EventHandling;
 
 use Broadway\Domain\DomainMessage;
 use Broadway\Domain\Metadata;
-use PHPUnit\Framework\TestCase;
 
 class SensitiveDataManagerTest extends \PHPUnit\Framework\TestCase
 {

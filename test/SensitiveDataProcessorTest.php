@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the broadway/sensitive-data package.
  *
@@ -13,7 +15,6 @@ namespace Broadway\BroadwaySensitiveData\EventHandling;
 
 use Broadway\Domain\DomainMessage;
 use Broadway\Domain\Metadata;
-use PHPUnit\Framework\TestCase;
 
 class SensitiveDataProcessorTest extends \PHPUnit\Framework\TestCase
 {
@@ -23,7 +24,7 @@ class SensitiveDataProcessorTest extends \PHPUnit\Framework\TestCase
     public function it_passes_the_event_and_domain_message_and_sensitive_data()
     {
         $testProcessor = new TestProcessor();
-        $testEvent     = new TestEvent();
+        $testEvent = new TestEvent();
 
         $this->assertFalse($testProcessor->isCalled());
 

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the broadway/sensitive-data package.
  *
@@ -22,7 +24,7 @@ class SensitiveDataManager implements EventListener
     /**
      * @param SensitiveDataEventListenerInterface[] $sensitiveDataProcessors
      */
-    public function __construct(array $sensitiveDataProcessors = array())
+    public function __construct(array $sensitiveDataProcessors = [])
     {
         foreach ($sensitiveDataProcessors as $sensitiveDataProcessor) {
             $this->subscribe($sensitiveDataProcessor);

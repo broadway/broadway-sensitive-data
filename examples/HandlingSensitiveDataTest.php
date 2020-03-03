@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the broadway/sensitive-data package.
  *
@@ -9,22 +11,22 @@
  * file that was distributed with this source code.
  */
 
+use Broadway\BroadwaySensitiveData\EventHandling\SensitiveData;
+use Broadway\BroadwaySensitiveData\EventHandling\SensitiveDataManager;
+use Broadway\BroadwaySensitiveData\EventHandling\SensitiveDataProcessor;
 use Broadway\CommandHandling\SimpleCommandBus;
 use Broadway\Domain\DomainMessage;
 use Broadway\EventHandling\SimpleEventBus;
 use Broadway\EventHandling\TraceableEventBus;
 use Broadway\EventStore\InMemoryEventStore;
-use Broadway\BroadwaySensitiveData\EventHandling\SensitiveData;
-use Broadway\BroadwaySensitiveData\EventHandling\SensitiveDataManager;
-use Broadway\BroadwaySensitiveData\EventHandling\SensitiveDataProcessor;
 use PHPUnit\Framework\TestCase;
 
-require_once __DIR__ . '/HandlingSensitiveData.php';
+require_once __DIR__.'/HandlingSensitiveData.php';
 
 /**
  * This test demonstrates that
  * - sensitive data is not stored in the event stream
- * - sensitive data is available for one-off processing
+ * - sensitive data is available for one-off processing.
  */
 class HandlingSensitiveDataTest extends TestCase
 {
@@ -35,10 +37,10 @@ class HandlingSensitiveDataTest extends TestCase
     public function setUp(): void
     {
         $this->commandBus = new SimpleCommandBus();
-        $this->eventBus   = new TraceableEventBus(new SimpleEventBus());
+        $this->eventBus = new TraceableEventBus(new SimpleEventBus());
 
         $this->sensitiveDataProcessor = new MySensitiveDataProcessor();
-        $sensitiveDataManager         = new SensitiveDataManager([$this->sensitiveDataProcessor]);
+        $sensitiveDataManager = new SensitiveDataManager([$this->sensitiveDataProcessor]);
 
         $commandHandler = new InvitationCommandHandler(
             new InvitationRepository(
