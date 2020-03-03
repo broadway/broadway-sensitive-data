@@ -43,4 +43,3 @@ A detailed example with a test case can be found in the [`examples/`][examples] 
 
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details
-[![Build Status](https://travis-ci.org/broadway/broadway-sensitive-data.svg?branch=master)](https://travis-ci.org/broadway/broadway-sensitive-data)
