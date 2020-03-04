@@ -4,7 +4,7 @@
   "type": "library",
   "license": "MIT",
   "require": {
-    "broadway/broadway": "^2.0",
+    "broadway/broadway": "^2.2.1",
     "php": ">=7.2"
   },
   "require-dev": {
