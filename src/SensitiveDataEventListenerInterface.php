@@ -17,5 +17,5 @@ use Broadway\Domain\DomainMessage;
 
 interface SensitiveDataEventListenerInterface
 {
-    public function handle(DomainMessage $domainMessage, SensitiveData $data = null);
+    public function handle(DomainMessage $domainMessage, SensitiveData $data = null): void;
 }

@@ -18,7 +18,14 @@ use Broadway\EventHandling\EventListener;
 
 class SensitiveDataManager implements EventListener
 {
+    /**
+     * @var SensitiveData
+     */
     private $sensitiveData;
+
+    /**
+     * @var SensitiveDataEventListenerInterface[]
+     */
     private $sensitiveDataProcessors = [];
 
     /**
@@ -31,7 +38,7 @@ class SensitiveDataManager implements EventListener
         }
     }
 
-    private function subscribe(SensitiveDataEventListenerInterface $sensitiveDataProcessor)
+    private function subscribe(SensitiveDataEventListenerInterface $sensitiveDataProcessor): void
     {
         $this->sensitiveDataProcessors[] = $sensitiveDataProcessor;
     }
@@ -43,7 +50,7 @@ class SensitiveDataManager implements EventListener
         }
     }
 
-    public function setSensitiveData(SensitiveData $data)
+    public function setSensitiveData(SensitiveData $data): void
     {
         $this->sensitiveData = $data;
     }
