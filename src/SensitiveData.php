@@ -15,6 +15,9 @@ namespace Broadway\BroadwaySensitiveData\EventHandling;
 
 class SensitiveData
 {
+    /**
+     * @var mixed
+     */
     private $data;
 
     /**
