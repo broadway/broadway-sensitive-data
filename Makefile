@@ -9,13 +9,17 @@ test:
 	vendor/bin/phpunit --testdox --exclude-group=none --colors=always
 
 .PHONY: qa
-qa: php-cs-fixer phpstan
+qa: php-cs-fixer-ci phpstan
 
 .PHONY: php-cs-fixer
 php-cs-fixer:
 	vendor/bin/php-cs-fixer fix --no-interaction --allow-risky=yes --diff --verbose
 
-.PHONY: phpstan
+.PHONY: php-cs-fixer-ci
+php-cs-fixer-ci:
+	vendor/bin/php-cs-fixer fix --dry-run --no-interaction --allow-risky=yes --diff --verbose
+
+PHONY: phpstan
 phpstan:
 	vendor/bin/phpstan analyse -l max src/
 
