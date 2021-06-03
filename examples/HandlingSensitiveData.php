@@ -118,7 +118,7 @@ class InvitationCommandHandler extends Broadway\CommandHandling\SimpleCommandHan
 
     public function __construct(
         Broadway\EventSourcing\EventSourcingRepository $repository,
-        \Broadway\BroadwaySensitiveData\EventHandling\SensitiveDataManager $sensitiveDataManager
+        Broadway\BroadwaySensitiveData\EventHandling\SensitiveDataManager $sensitiveDataManager
     ) {
         $this->repository = $repository;
         $this->sensitiveDataManager = $sensitiveDataManager;
