@@ -3,7 +3,7 @@ broadway/sensitive-data
 
 Helpers for handling sensitive data with Broadway.
 
-[![Build Status](https://travis-ci.org/broadway/broadway-sensitive-data.svg?branch=master)](https://travis-ci.org/broadway/broadway-sensitive-data)
+![build status](https://github.com/broadway/broadway-sensitive-data/actions/workflows/ci.yml/badge.svg)
 
 ## Installation
 
