@@ -1,0 +1,7 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Parameter \\#1 \\$event of method Broadway\\\\BroadwaySensitiveData\\\\EventHandling\\\\SensitiveDataProcessor\\:\\:getApplyMethod\\(\\) expects object, mixed given\\.$#"
+			count: 1
+			path: src/SensitiveDataProcessor.php
+
