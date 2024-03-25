@@ -17,7 +17,7 @@ use Broadway\Domain\DomainMessage;
 
 abstract class SensitiveDataProcessor implements SensitiveDataEventListenerInterface
 {
-    public function handle(DomainMessage $domainMessage, SensitiveData $data = null): void
+    public function handle(DomainMessage $domainMessage, ?SensitiveData $data = null): void
     {
         $event = $domainMessage->getPayload();
         $method = $this->getApplyMethod($event);

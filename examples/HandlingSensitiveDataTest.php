@@ -75,7 +75,7 @@ class MySensitiveDataProcessor extends SensitiveDataProcessor
 {
     private $recordedSensitiveData = [];
 
-    protected function applyInvitedEvent(InvitedEvent $event, DomainMessage $domainMessage, SensitiveData $data = null)
+    protected function applyInvitedEvent(InvitedEvent $event, DomainMessage $domainMessage, ?SensitiveData $data = null)
     {
         $this->recordedSensitiveData[] = $data;
     }

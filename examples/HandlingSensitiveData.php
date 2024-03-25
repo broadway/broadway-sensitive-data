@@ -132,7 +132,7 @@ class InvitationCommandHandler extends Broadway\CommandHandling\SimpleCommandHan
         $invitation = Invitation::invite($command->invitationId, $command->name);
 
         $this->sensitiveDataManager->setSensitiveData(
-            new \Broadway\BroadwaySensitiveData\EventHandling\SensitiveData(['password' => $command->password])
+            new Broadway\BroadwaySensitiveData\EventHandling\SensitiveData(['password' => $command->password])
         );
 
         $this->repository->save($invitation);
