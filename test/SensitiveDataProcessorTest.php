@@ -15,12 +15,11 @@ namespace Broadway\BroadwaySensitiveData\EventHandling;
 
 use Broadway\Domain\DomainMessage;
 use Broadway\Domain\Metadata;
+use PHPUnit\Framework\Attributes\Test;
 
 class SensitiveDataProcessorTest extends \PHPUnit\Framework\TestCase
 {
-    /**
-     * @test
-     */
+    #[Test]
     public function it_passes_the_event_and_domain_message_and_sensitive_data()
     {
         $testProcessor = new TestProcessor();

@@ -19,6 +19,7 @@ use Broadway\Domain\DomainMessage;
 use Broadway\EventHandling\SimpleEventBus;
 use Broadway\EventHandling\TraceableEventBus;
 use Broadway\EventStore\InMemoryEventStore;
+use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
 require_once __DIR__.'/HandlingSensitiveData.php';
@@ -54,9 +55,7 @@ class HandlingSensitiveDataTest extends TestCase
         $this->eventBus->subscribe($sensitiveDataManager);
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function it_handles_sensitive_data()
     {
         $this->eventBus->trace();

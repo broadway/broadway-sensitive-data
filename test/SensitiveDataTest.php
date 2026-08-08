@@ -13,11 +13,11 @@ declare(strict_types=1);
 
 namespace Broadway\BroadwaySensitiveData\EventHandling;
 
+use PHPUnit\Framework\Attributes\Test;
+
 class SensitiveDataTest extends \PHPUnit\Framework\TestCase
 {
-    /**
-     * @test
-     */
+    #[Test]
     public function it_exposes_its_properties()
     {
         $data = ['foo' => 'bar'];
