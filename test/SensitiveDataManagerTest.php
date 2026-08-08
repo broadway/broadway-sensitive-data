@@ -15,12 +15,14 @@ namespace Broadway\BroadwaySensitiveData\EventHandling;
 
 use Broadway\Domain\DomainMessage;
 use Broadway\Domain\Metadata;
+use PHPUnit\Framework\Attributes\Test;
+use Prophecy\PhpUnit\ProphecyTrait;
 
 class SensitiveDataManagerTest extends \PHPUnit\Framework\TestCase
 {
-    /**
-     * @test
-     */
+    use ProphecyTrait;
+
+    #[Test]
     public function it_publishes_events_and_sensitive_date_to_subscribed_processors()
     {
         $domainMessage = DomainMessage::recordNow(1, 1, new Metadata([]), new \stdClass());
